@@ -54,7 +54,6 @@ async def async_main():
         await create_users(db_session, users_data)
         await create_posts(db_session, posts_data)
 
-        # Исправленная секция проверки данных
         users = (await db_session.execute(select(User))).scalars().all()
         print("\nПример данных пользователей:")
         for user in users[:3]:
